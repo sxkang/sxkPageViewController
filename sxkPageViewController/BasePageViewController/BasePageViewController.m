@@ -15,7 +15,7 @@
     NSArray *buttonArray;      //存放VC Button的数组
     UIView *headerView;        //头部视图
     CGRect oldRect;            //用来保存title布局的Rect
-    XLBasePageTitleButton *oldButton;
+    sxkBasePageTitleButton *oldButton;
     NSInteger currentVCIndex;  //当前VC索引
     
 }
@@ -100,7 +100,7 @@
                     }
                 }else{
                     
-                    XLBasePageTitleButton *autoButton = [[XLBasePageTitleButton alloc] init];
+                    sxkBasePageTitleButton *autoButton = [[sxkBasePageTitleButton alloc] init];
                     
                     autoButton.buttonlineWidth = self.lineWidth;
                     autoButton.tag = i;
@@ -147,7 +147,7 @@
         {
             oldRect = CGRectZero;
             CGFloat padding = self.view.frame.size.width-(((UIButton *)buttonList.lastObject).frame.origin.x + ((UIButton *)buttonList.lastObject).frame.size.width);
-            for (XLBasePageTitleButton *button in buttonList) {
+            for (sxkBasePageTitleButton *button in buttonList) {
                 button.frame = CGRectMake(oldRect.origin.x+oldRect.size.width, 0,button.frame.size.width+padding/buttonList.count, [self.dataSource respondsToSelector:@selector(heightForTitleViewPager:)]?[self.dataSource heightForTitleViewPager:self]:0);
                 oldRect = button.frame;
             }
@@ -177,7 +177,7 @@
     [self titleButtonClick:[self.titleButtonsArr objectAtIndex:_jumpVcIndex]];
 }
 
--(void)titleButtonClick:(XLBasePageTitleButton *)sender
+-(void)titleButtonClick:(sxkBasePageTitleButton *)sender
 {
     //记录是往前滑动还是往后滑动  动画效果使用
     NSInteger isDirection = oldButton.tag<sender.tag?1:0;
@@ -201,7 +201,7 @@
     [self scrollViewOffset:sender];
 }
 
--(void)titleButtonConvert:(XLBasePageTitleButton *)sender
+-(void)titleButtonConvert:(sxkBasePageTitleButton *)sender
 {
     oldButton.selected = NO;
     sender.selected = YES;
@@ -347,7 +347,7 @@
 @end
 
 #pragma mark 标题按钮的属性设置
-@implementation XLBasePageTitleButton
+@implementation sxkBasePageTitleButton
 - (instancetype)init
 {
     self = [super init];

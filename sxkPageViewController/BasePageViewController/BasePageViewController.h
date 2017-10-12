@@ -82,7 +82,7 @@
 @end
 
 #pragma mark 标题按钮
-@interface XLBasePageTitleButton : UIButton
+@interface sxkBasePageTitleButton : UIButton
 
 @property (nonatomic,assign) CGFloat buttonlineWidth;
 
