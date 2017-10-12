@@ -1,0 +1,3 @@
+# sxkPageViewController
+利用UIPageViewController 来实现多个页面的浏览切换 支持手势滑动切换页面 上方的标题支持纯文字或者图片展示。
+使用时要先继承BasepageViewController 然后根据自己不同的需求 实现不同的代理方法 详情见Demo
